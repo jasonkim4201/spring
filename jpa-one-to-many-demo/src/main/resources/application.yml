@@ -1,0 +1,14 @@
+server:
+  port: 9025
+  
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@trainingdb.chbgixfeoffe.us-east-2.rds.amazonaws.com:1521:orcl
+    username: jpa_one_to_many_demo
+    password: p4ssw0rd 
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  jpa:
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update

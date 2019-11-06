@@ -1,0 +1,5 @@
+#ignore metadata folder
+metadata
+
+#ignore Server folder
+Servers

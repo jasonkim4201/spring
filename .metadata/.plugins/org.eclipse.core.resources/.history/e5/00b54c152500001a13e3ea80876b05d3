@@ -1,0 +1,29 @@
+package com.example.jpa;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.example.jpa.repository.PostRepository;
+import com.example.jpa.repository.TagRepository;
+
+@SpringBootApplication
+public class JpaOneToManyDemoApplication {
+
+	private PostRepository postRepository;
+	private TagRepository tagRepository;
+	
+	public JpaOneToManyDemoApplication() {
+		
+	}
+	
+	public JpaOneToManyDemoApplication(PostRepository postRepository, TagRepository tagRepository) {
+		this.postRepository = postRepository;
+		this.tagRepository = tagRepository;
+	}
+	
+	public static void main(String[] args) {
+		SpringApplication.run(JpaOneToManyDemoApplication.class, args);
+	}
+
+}
+	

@@ -1,0 +1,12 @@
+package com.example.jpa;
+
+public class TestConnection {
+	public static void main(String[] args) {
+		private String url = "jdbc:oracle:thin:@trainingdb.chbgixfeoffe.us-east-2.rds.amazonaws.com:1521:orcl";
+		private String user = "bankappdb";
+		private String pw = "p4ssw0rd";
+		
+		
+		
+	}
+}
