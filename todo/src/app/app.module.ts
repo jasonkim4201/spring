@@ -15,6 +15,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { WelcomeDataService } from './services/data/welcome-data.service';
 import { RouterGuardService } from './services/routerGuard/router-guard.service';
 import { HttpClientModule } from '@angular/common/http';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     ListTodosComponent,
     MenuComponent,
     FooterComponent,
-    LogoutComponent
+    LogoutComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

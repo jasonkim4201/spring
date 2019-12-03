@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../models/Todo';
 import { TodoDataService } from '../services/data/todo-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-todos',
@@ -28,10 +29,11 @@ export class ListTodosComponent implements OnInit {
   //   new Todo(3, 'look at spring security', false, new Date())
   // ];
 
-  constructor(private todosService: TodoDataService) { }
+  constructor(private todosService: TodoDataService,
+              private router: Router) { }
 
   ngOnInit() {
-    
+    this.refreshTodos();
   }
 
   refreshTodos() {
@@ -43,14 +45,24 @@ export class ListTodosComponent implements OnInit {
     );
   }
 
-  deleteTodo(id): void {
+  deleteTodo(id: number): void {
     console.log(`deleted id #${id}`);
     this.todosService.deleteTodo('jasonkim', id).subscribe(
       response => {
         console.log(response);
         this.message = `Todo ${id} delete sucessful!`;
+        this.refreshTodos();
       }
     );
+  }
+
+  updateTodo(id: number): void {
+    console.log(`todo #${id} has been clicked`);
+    this.router.navigate(['todos', id]);
+  }
+
+  addTodo() {
+    this.router.navigate(['todos', -1]);
   }
 
 }
